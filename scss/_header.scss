@@ -1,0 +1,53 @@
+#header {
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 10%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.haeder-logo {
+  flex-grow: 1;
+}
+.haeder-logo img {
+  width: 136px;
+  height: auto;
+}
+.dropdown-list {
+  flex-grow: 2;
+}
+.dropdown-list-toggle {
+  cursor: pointer;
+}
+.dropdown-list-toggle + .dropdown-list-toggle {
+  margin-left: 60px;
+}
+.dropdown-list-menu {
+  position: absolute;
+  display: none;
+}
+.header-right {
+  flex-grow: 2;
+}
+.header-search {
+  flex-basis: 320px;
+}
+.form-control-t {
+  width: 100%;
+  height: 2.8125rem;
+  border-radius: 0.25rem;
+  border: 1px solid #d5d5d5;
+  padding: 0.75rem 1rem;
+}
+.header-icon + .header-icon {
+  margin-left: 0.75rem;
+}
+.header-icon .header-icon__location,
+.header-icon .header-icon__map,
+.header-icon .header-icon__user {
+  font-size: 1.875rem;
+}
+.search-icon {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
