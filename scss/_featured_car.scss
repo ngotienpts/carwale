@@ -1,0 +1,83 @@
+.tab-item.active {
+  border-bottom: 0.25rem solid #00afa0;
+  color: #00afa0;
+}
+.tab-item + .tab-item {
+  margin-left: 1rem;
+}
+.tab-item {
+  color: #aaa;
+  cursor: pointer;
+}
+.tab-panes-block {
+  border-radius: 0.25rem;
+  border: 1px solid #e1e1e1;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.hovering-banner {
+  top: 0.375rem;
+  left: 0.375rem;
+}
+.just-launched {
+  background-color: #ef9526;
+  padding: 0.25rem 0.5rem;
+}
+.time-public {
+  background-color: #a25a00;
+  padding: 0.25rem 0.5rem;
+}
+.time-public .badge {
+  transform: translateY(-0.3125rem);
+  -webkit-transform: translateY(-0.3125rem);
+  -moz-transform: translateY(-0.3125rem);
+  -ms-transform: translateY(-0.3125rem);
+  -o-transform: translateY(-0.3125rem);
+}
+.tab-panes-block__content {
+  padding: 1rem 0.75rem 1.25rem;
+}
+.tab-panes {
+  display: none;
+}
+.tab-panes.active {
+  display: block;
+}
+.slick-slide {
+  margin: 0.375rem;
+}
+.slick-prev {
+  left: -12px;
+}
+.slick-next {
+  right: -12px;
+}
+.slick-next,
+.slick-prev {
+  background-color: #fff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: 3px 0px 10px -1px rgb(0 0 0 / 30%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.slick-next:before {
+  content: "\276F";
+  color: #333;
+  font-size: 21px;
+}
+.slick-prev:before {
+  content: "\276E";
+  color: #333;
+  font-size: 21px;
+}
