@@ -27,46 +27,70 @@ document.addEventListener("DOMContentLoaded", function () {
       featured.forEach(function (el) {
         var items = el.querySelectorAll(".tab-item");
         var tabs = el.querySelectorAll(".tab-panes");
-
+        var textTabs = el.querySelectorAll(".text-panes");
+        var choiceTabs = el.querySelectorAll(".tab-content-item");
         items.forEach(function (item, index) {
-          item.addEventListener("click", showContent);
-          var pane = tabs[index];
-          function showContent() {
-            el.querySelector(".tab-item.active").classList.remove("active");
-            el.querySelector(".tab-panes.active").classList.remove("active");
+          item.onclick = function(){
+            var pane = tabs[index];
+            var text = textTabs[index];
+            var choice = choiceTabs[index];
+            if(el.querySelector(".tab-item.active")){
+              el.querySelector(".tab-item.active").classList.remove("active");
+            }
+            if(el.querySelector(".tab-panes.active")){
+              el.querySelector(".tab-panes.active").classList.remove("active");
+            }
+            if(el.querySelector(".text-panes.active")){
+              el.querySelector(".text-panes.active").classList.remove("active");
+            }
+            if(el.querySelector(".tab-content-item.active")){
+              el.querySelector(".tab-content-item.active").classList.remove("active");
+            }
+            // ----------------------------------------------------------------------
+            if(item){
+              item.classList.add("active");
+            }
+            if(pane){
+              pane.classList.add("active");
+            }
+            if(text){
+              text.classList.add("active");
+            }
+            if(choice){
+              choice.classList.add("active");
+            }
+            /**------------------------------------------------------------------------- */
+            if(pane){
+              if($(pane).hasClass('active') && !$(pane).hasClass('actived')) {
+                $(pane).addClass('actived');
+                $(pane).not('.slick-initialized').slick({
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  arrows: true,
+                  infinite: false,
+                });
+              }
+            }
+          };
 
-            item.classList.add("active");
-            pane.classList.add("active");
-          }
         });
       });
     },
+    tabActiveDefault:function(){
+      $(".tab-panes.active").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        infinite: false,
+      });
+    },
     start: function () {
+      // slider
+      this.tabActiveDefault();
       // xử lý sự kiện
       this.handleEvent();
     },
   };
   app.start();
 });
-// slider
-$(document).ready(function () {
-  $(".tab-panes.active").slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: true,
-    infinite: false,
-  });
-  var filtered = false;
 
-  $(".js-filter").on("click", function () {
-    if (filtered === false) {
-      $(".filtering").slick("slickFilter", ":even");
-      $(this).text("Unfilter Slides");
-      filtered = true;
-    } else {
-      $(".filtering").slick("slickUnfilter");
-      $(this).text("Filter Slides");
-      filtered = false;
-    }
-  });
-});

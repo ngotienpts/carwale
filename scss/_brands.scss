@@ -1,0 +1,22 @@
+.brand-content {
+    border-radius: 4px;
+    border: 1px solid #e1e1e1;
+    border-left: none;
+}
+.brands {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 1fr 1fr;
+}
+.brand-item{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.brand-item img {
+    width: 88px;
+    height: auto;
+}

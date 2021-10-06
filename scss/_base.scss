@@ -43,7 +43,6 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: #484848;
 }
 img {
   display: block;
@@ -142,6 +141,9 @@ img {
 .border-d5 {
   border: 1px solid #d5d5d5;
 }
+.border-e1 {
+  border: 1px solid #e1e1e1;
+}
 /*=================================================================*/
 .line-d5 {
   border-bottom: 1px solid #d5d5d5;
@@ -162,6 +164,9 @@ img {
   padding-right: 30px;
   background-color: #fff;
   color: $text-gray-b5;
+}
+.border-50 {
+  border-radius: 50%;
 }
 /*=================================================================*/
 .thumb-img {

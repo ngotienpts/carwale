@@ -1,0 +1,20 @@
+.tab-content-item {
+    display: none;
+    transition: display 0.2s ease;
+    margin-top: 1.5rem;
+    will-change: display;
+}
+.tab-content-item.active {
+    display: block;
+}
+.choice-pudget {
+    padding: 1rem 1rem 0.75rem 1.25rem;
+}
+.choice-pudget-item {
+    border-radius: 1.25rem;
+    margin: 0.75rem 0.75rem 1rem 0;
+}
+.choice-pudget a:hover{
+    border-color: #00afa0;
+    color: #00afa0;
+}

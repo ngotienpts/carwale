@@ -3,11 +3,12 @@
   color: #00afa0;
 }
 .tab-item + .tab-item {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 .tab-item {
   color: #aaa;
   cursor: pointer;
+  border-bottom: 0.25rem solid transparent;
 }
 .tab-panes-block {
   border-radius: 0.25rem;
@@ -80,4 +81,13 @@
   content: "\276E";
   color: #333;
   font-size: 21px;
+}
+.text-panes {
+  display: none;
+  transition: display 0.2s ease;
+  margin-top: 1.5rem;
+  will-change: display;
+}
+.text-panes.active {
+  display: block;
 }
