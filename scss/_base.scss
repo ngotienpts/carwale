@@ -43,6 +43,7 @@ a {
 }
 a:hover {
   text-decoration: none;
+  color: inherit;
 }
 img {
   display: block;
@@ -130,6 +131,9 @@ img {
 .text-blue-02 {
   color: $text-blue-02;
 }
+.text-white-80 {
+  color: #ffffff80;
+}
 /*=================================================================*/
 .bg-red-e5 {
   background-color: $bg-red-e5;
@@ -190,4 +194,31 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+/*===============================================================*/
+::-webkit-input-placeholder { /* Edge */
+  color: #aaaaaa;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #aaaaaa;
+}
+
+::placeholder {
+  color: #aaaaaa;
+}
+/*==================================================================*/
+.fix-text2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fix-text3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

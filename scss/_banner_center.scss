@@ -1,0 +1,25 @@
+.banner-center-wrapper {
+    max-width: 1008px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+.banner-center-content {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 0.25rem;
+    padding: 1.25rem;
+    width: 40%;
+    margin-left: auto;
+}
+.search-banner-center {
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    line-height: 1;
+    cursor: pointer;
+}
+.select-city {
+    padding: 0.75rem 1rem;
+    height: 45px;
+}

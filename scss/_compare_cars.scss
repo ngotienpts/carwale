@@ -1,0 +1,47 @@
+.tab-panes-block__thumb-left,
+.tab-panes-block__thumb-right {
+    width: 50%;
+}
+.tab-panes-block__btn {
+    padding: 0 0.75rem 1rem;
+    
+}
+.tab-panes-block__btn a {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #0288D1;
+    border-radius: 0.25rem;
+    display: block;
+}
+.tab-panes-block__btn a:hover{
+    color: #0288D1;
+}
+.tab-panes-block__thumb-left-text {
+    padding: 0 0.75rem;
+    display: block;
+}
+.tab-panes-block__thumb-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 50%;
+    background: #e1e1e1;
+    top: 30px;
+}
+.tab-panes-block__thumb-line:before {
+    content: "vs";
+    font-size: 13px;
+    color: #e53012;
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #0288D1;
+    border-radius: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
