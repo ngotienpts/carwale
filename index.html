@@ -18,13 +18,22 @@
       integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
    <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="./css/responsive.css">
 </head>
 
 <body>
    <header id="header">
-      <section class="d-flex align-items-center justify-content-between w-1366 px-4">
-         <div class="haeder-logo">
+      <section class="d-flex align-items-center justify-content-between w-1366 px-lg-4 py-lg-0 p-3">
+         <div class="haeder-logo d-flex align-items-center">
+            <div class="header-icon d-lg-none d-block mr-2">
+               <ion-icon name="menu-outline" class="header-icon__bar"></ion-icon>
+            </div>
             <a href="#"><img src="./images/logo.svg" alt=""></a>
+            <a href="#" class="more-car-show d-none">
+               <img src="./images/car.png" alt="" class="more-car-show-item active">
+               <img src="./images/text.png" alt="" class="more-car-show-item">
+               <div class="more-car-show-item more-car-show-item-text">know<br>more</div>
+            </a>
          </div>
          <!-- ======================================================================= -->
          <ul class="dropdown-list d-lg-flex align-items-center d-none">
@@ -105,17 +114,17 @@
             </li>
          </ul>
          <!-- ======================================================================= -->
-         <div class="header-right d-flex align-items-center justify-content-end">
-            <div class="header-search mr-4">
+         <div class="header-right d-lg-flex d-none align-items-center justify-content-end">
+            <div class="header-search header-search-pc mr-4">
                <form action="" id="form-1">
-                  <div class="search-form-header form-group-t position-relative">
+                  <div class="search-form-header search-form-header-pc form-group-t position-relative">
                      <input type="text" name="search" id="search-header" class="form-control-t pr-5 focus-border-blule"
                         placeholder="Search" autocomplete="off">
                      <div class="position-absolute search-icon">
                         <ion-icon name="search-outline" class="fs-26"></ion-icon>
                      </div>
                   </div>
-                  <ul class="search-dropdown">
+                  <ul class="search-dropdown search-dropdown-pc">
                      <li class="search-dropdown-item pt-3">
                         <span class="fs-10 d-block text-gray-b5 px-3">Recently Viewed</span>
                         <ul class="search-dropdown-item-ul">
@@ -171,17 +180,198 @@
             <div class="header-icon">
                <ion-icon name="map-outline" class="header-icon__map"></ion-icon>
             </div>
+            <div class="header-icon header-user">
+               <ion-icon name="person-circle-outline" class="header-icon__user"></ion-icon>
+            </div>
+         </div>
+         <!-- ======================================================================= -->
+         <div class="d-lg-none d-flex align-items-center">
             <div class="header-icon">
-               <ion-icon name="person-circle-outline" class="header-icon__location"></ion-icon>
+               <ion-icon name="search-outline" class="header-icon__search"></ion-icon>
+            </div>
+            <div class="header-icon">
+               <ion-icon name="location-outline" class="header-icon__location"></ion-icon>
             </div>
          </div>
       </section>
    </header>
+   <!-- show login -->
+
+   <section class="login-popup">
+      <div class="login-popup-field position-absolute">
+         <div class="position-relative">
+            <div class="position-absolute d-flex align-items-center justify-content-center login-popup-close">
+               <ion-icon name="close-outline" class="login-popup-close-icon fs-20"></ion-icon>
+            </div>
+            <div class="login-popup-header">
+               <div class="fs-20 fw-600">Login to CarWale</div>
+               <div class="text-gray-aa fs-15 mt-1">This is necessary to personalise results for you</div>
+            </div>
+            <div class="login-popup-form">
+               <form action="">
+                  <div class="form-group-t position-relative" style="margin-bottom: 2rem;">
+                     <input type="text" name="search" id="search-popup" class="form-control-t focus-border-blule"
+                        placeholder="Enter Your Email id" autocomplete="off">
+                  </div>
+
+                  <div class="form-group-t position-relative" style="margin-bottom: 2rem;">
+                     <input type="password" name="password" id="password-popup" class="form-control-t focus-border-blule pr-5"
+                        placeholder="Enter Your Password" autocomplete="off">
+                     <div class="position-absolute popup-show-pass fs-13 fw-600 text-blue-02">show</div>
+                  </div>
+
+                  <div class="form-group-t position-relative d-flex align-items-center" style="margin-bottom: 2rem;">
+                     <input type="checkbox" id="keep-me">
+                     <label for="keep-me" class="ml-2 fs-15 text-gray-6f">Keep me signed in</label>
+                  </div>
+                  <div class="padding-y-40">
+                     <button type="subit" class="btn btn-login fw-600 bg-red-e5 w-100 fs-15 text-white">Login</button>
+                     <div class="fs-15 text-blue-02 fw-600 text-center mt-20">Forgot Password</div>
+                     <div class="mt-20 mb-20 d-flex align-items-center justify-content-between">
+                        <span class="line-or"></span>
+                        <span class="text-gray-6f px-3">Or</span>
+                        <span class="line-or"></span>
+                     </div>
+                     <button class="btn w-100 border-d5 btn-login-gg">
+                        <img src="./images/google.svg" alt="" style="width: 20px;height: auto;">
+                        <span class="d-flex fs-15 text-gray-f6 ml-3">Continue With Google</span>
+                     </button>
+                     <div class="mt-20 d-flex align-items-center justify-content-center">
+                        <span class="fs-15">Don't have an account? </span>
+                        <a href="#" class="fs-15 text-blue-02 d-block ml-2">Sign Up</a>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- end show login -->
+
+   <!-- show menu -->
+   <section class="menu-mobile">
+      <div class="menu-mb-field">
+         <ul class="menu-mb-list">
+            <li class="menu-mb-dropdown">
+               <div class="pt-12 pb-12 pl-12 pr-12">
+                  <div class="d-flex align-items-center">
+                     <ion-icon name="home-outline" class="menu-icon fs-20 mr-3"></ion-icon>
+                     <span class="fw-600 fs-15">Home</span>
+                  </div>
+               </div>
+            </li>
+            <li class="menu-mb-dropdown">
+               <div class="pt-12 pb-12 pl-12 pr-12 d-flex align-items-center justify-content-between is-show">
+                  <div class="d-flex align-items-center">
+                     <ion-icon name="gift-outline" class="menu-icon fs-20 mr-3"></ion-icon>
+                     <span class="fs-15 fw-600">New Cars</span>
+                  </div>
+                  <div><ion-icon name="chevron-down-outline" class="menu-icon-item"></ion-icon></div>
+               </div>
+               <ul class="menu-mb-dropdown-list">
+                  <li class="menu-mb-dropdown-item fs-13">
+                     <a href="#">Find New Cars</a>
+                  </li>
+                  <li class="menu-mb-dropdown-item fs-13">
+                     <a href="#">Find New Cars</a>
+                  </li>
+                  <li class="menu-mb-dropdown-item fs-13">
+                     <a href="#">Find New Cars</a>
+                  </li>
+               </ul>
+            </li>
+            <li class="menu-mb-dropdown">
+               <div class="pt-12 pb-12 pl-12 pr-12 d-flex align-items-center justify-content-between is-show">
+                  <div class="d-flex align-items-center">
+                     <ion-icon name="gift-outline" class="menu-icon fs-20 mr-3"></ion-icon>
+                     <span class="fs-15 fw-600">New Cars</span>
+                  </div>
+                  <div><ion-icon name="chevron-down-outline" class="menu-icon-item"></ion-icon></div>
+               </div>
+               <ul class="menu-mb-dropdown-list">
+                  <li class="menu-mb-dropdown-item fs-13">
+                     <a href="#">Find New Cars</a>
+                  </li>
+                  <li class="menu-mb-dropdown-item fs-13">
+                     <a href="#">Find New Cars</a>
+                  </li>
+                  <li class="menu-mb-dropdown-item fs-13">
+                     <a href="#">Find New Cars</a>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+   </section>
+   <!-- end show menu -->
+   <section class="search-mobile">
+     <div class="search-menu-field">
+      <form action="" id="form-4">
+         <div class="search-form-header search-form-header-mb form-group-t position-relative">
+            <input type="text" name="search" id="search-header-mb" class="form-control-t pr-5 focus-border-blule"
+               placeholder="Search" autocomplete="off">
+            <div class="position-absolute search-icon">
+               <ion-icon name="search-outline" class="fs-26"></ion-icon>
+            </div>
+         </div>
+         <ul class="search-dropdown search-dropdown-mb">
+            <li class="search-dropdown-item pt-3">
+               <span class="fs-10 d-block text-gray-b5 px-3">Recently Viewed</span>
+               <ul class="search-dropdown-item-ul">
+                  <li class="search-dropdown-item-li">
+                     <a href="https://www.carwale.com/"
+                        class="d-flex align-items-center justify-content-between py-3 line-f4">
+                        <div class="d-flex align-items-center">
+                           <ion-icon name="time-outline" class="time pr-2 fs-20"></ion-icon>MG Astor
+                        </div>
+                        <div class="fs-12 fw-600">Coming Soon</div>
+                     </a>
+                  </li>
+               </ul>
+            </li>
+            <li class="search-dropdown-item pt-3">
+               <span class="fs-10 d-block text-gray-b5 px-3">Trending searches</span>
+               <ul class="search-dropdown-item-ul">
+                  <li class="search-dropdown-item-li">
+                     <a href="https://www.carwale.com/"
+                        class="d-flex align-items-center justify-content-between py-3 line-f4">
+                        <div class="d-flex align-items-center">
+                           <ion-icon name="time-outline" class="time pr-2 fs-20"></ion-icon>MG Astor
+                        </div>
+                        <div class="fs-12 fw-600">Coming Soon</div>
+                     </a>
+                  </li>
+                  <li class="search-dropdown-item-li">
+                     <a href="https://www.carwale.com/"
+                        class="d-flex align-items-center justify-content-between py-3 line-f4">
+                        <div class="d-flex align-items-center">
+                           <ion-icon name="trending-up-outline" class="trending pr-2 fs-20"></ion-icon>Mahindra
+                           XUV700
+                        </div>
+                     </a>
+                  </li>
+                  <li class="search-dropdown-item-li">
+                     <a href="https://www.carwale.com/"
+                        class="d-flex align-items-center justify-content-between py-3 line-f4">
+                        <div class="d-flex align-items-center">
+                           <ion-icon name="trending-up-outline" class="trending pr-2 fs-20"></ion-icon>Mahindra
+                           XUV700
+                        </div>
+                     </a>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </form>
+     </div>
+   </section>
+
    <main id="main">
       <!-- banner top -->
       <section class="banner-top position-relative w-100">
          <a href="https://www.carwale.com/" class="baner-top-img" title="WATCH VIDEO">
-            <img src="./images/banner_top.jpg" alt="">
+            <img src="./images/banner_top.jpg" alt="" class="d-lg-block d-none">
+            <img src="./images/homepage-m-2021.png" alt="" class="d-lg-none d-block">
          </a>
          <div class="banner-top-content position-absolute w-670">
             <h1 class="banner-top__title fs-26 text-white text-uppercase fw-600">find the right car</h1>
@@ -195,14 +385,14 @@
       <!-- end banner top -->
       <!-- featured cars -->
       <section class="featured-car w-992 py-3">
-         <h1 class="featured-title fs-22 fw-600 py-2">Featured Cars</h1>
+         <h1 class="featured-title fs-22 fw-600 py-2 px-lg-0 px-3">Featured Cars</h1>
          <div>
-            <div class="tabs d-flex align-items-center line-e1">
+            <div class="tabs d-flex align-items-center line-e1 px-lg-0 px-3">
                <div class="tab-item active text-uppercase fs-13 py-3 fw-600">popular</div>
                <div class="tab-item text-uppercase fs-13 py-3 fw-600">just launched</div>
                <div class="tab-item text-uppercase fs-13 py-3 fw-600">ipcoming</div>
             </div>
-            <div class="tab-content py-3">
+            <div class="tab-content py-lg-3 py-2">
                <div class="tab-panes active">
                   <!-- -------------------------------------------------------------------- -->
                   <div class="tab-panes-block">
@@ -302,7 +492,7 @@
                   <!-- -------------------------------------------------------------------- -->
                </div>
                <!-- -------------------------------------------------------------------- -->
-               <div class="text-panes active">
+               <div class="text-panes active px-lg-0 px-3">
                   <a href="#" class="d-flex align-items-center fw-600">
                      <span class=" fs-15 text-blue-02 fw-600">View All Popular Cars</span> 
                      <ion-icon name="chevron-forward-outline" class="ml-2 fs-20 text-blue-02"></ion-icon>
@@ -409,7 +599,7 @@
                </div>
 
                <!-- -------------------------------------------------------------------- -->
-               <div class="text-panes">
+               <div class="text-panes px-lg-0 px-3">
                   <a href="#" class="d-flex align-items-center fw-600">
                      <span class=" fs-15 text-blue-02 fw-600">View All Just Launched Cars </span> 
                      <ion-icon name="chevron-forward-outline" class="ml-2 fs-20 text-blue-02"></ion-icon>
@@ -518,7 +708,7 @@
                </div>
 
                <!-- -------------------------------------------------------------------- -->
-               <div class="text-panes">
+               <div class="text-panes px-lg-0 px-3">
                   <a href="#" class="d-flex align-items-center fw-600">
                      <span class=" fs-15 text-blue-02 fw-600">View All Upcoming Cars </span> 
                      <ion-icon name="chevron-forward-outline" class="ml-2 fs-20 text-blue-02"></ion-icon>
@@ -531,7 +721,7 @@
       <!-- end featured cars -->
       <!-- all brand -->
       <section class="brand w-992 py-2">
-         <h1 class="brand-title fs-22 fw-600 py-2">All Brands</h1>
+         <h1 class="brand-title fs-22 fw-600 py-2 px-lg-0 px-3">All Brands</h1>
          <div class="brand-content">
             <div class="brands">
                <div class="brand-item py-3 px-1">
@@ -613,16 +803,16 @@
       <!-- end all brand -->
       <!--find the cars of your choice -->
       <section class="featured-car w-992 py-3">
-         <h1 class="featured-title fs-22 fw-600 py-2">Find The Cars Of Your Choice</h1>
+         <h1 class="featured-title fs-22 fw-600 py-2  px-lg-0 px-3">Find The Cars Of Your Choice</h1>
          <div>
-            <div class="tabs d-flex align-items-center line-e1">
+            <div class="tabs d-flex align-items-center line-e1  px-lg-0 px-3">
                <div class="tab-item active text-uppercase fs-13 py-3 fw-600">pudget</div>
                <div class="tab-item text-uppercase fs-13 py-3 fw-600">body type</div>
                <div class="tab-item text-uppercase fs-13 py-3 fw-600">puel type</div>
                <div class="tab-item text-uppercase fs-13 py-3 fw-600">TRANSMISSION</div>
                <div class="tab-item text-uppercase fs-13 py-3 fw-600">SEATING CAPACITY</div>
             </div>
-            <div class="tab-content pb-3">
+            <div class="tab-content pb-3 px-lg-0 px-3 pt-lg-0 pt-3">
                <div class="tab-content-item active">
                   <div class="choice-pudget bg-gray-f9 rounded border-e1">
                      <a href="#" class="btn bg-white border-e1 choice-pudget-item fw-600">Under 4Lakh</a>
@@ -753,56 +943,56 @@
                   <div class="choice-fuel bg-gray-f9">
                      <div class="choice-fuel-item">
                         <a href="#" class="d-flex align-items-center justify-content-between">
-                           <div class="choice-fuel-thumb d-flex align-items-center">
+                           <div class="choice-fuel-thumb d-lg-flex d-block align-items-center">
                               <div class="choice-fuel-img">
                                  <img src="./images/petrol.svg" alt="">
                                  <div class="choice-fuel-bg-circle"></div>
                               </div>
-                              <span class="ml-3 fs-13 fw-600">Petrol</span>
+                              <div class="ml-3 fs-13 fw-600">Petrol</div>
                            </div>
-                           <div class="choice-fuel-icon">
+                           <div class="choice-fuel-icon d-lg-block d-none">
                               <ion-icon name="chevron-forward-outline" class="fs-20 text-gray-aa"></ion-icon>
                            </div>
                         </a>
                      </div>
                      <div class="choice-fuel-item">
                         <a href="#" class="d-flex align-items-center justify-content-between">
-                           <div class="choice-fuel-thumb d-flex align-items-center">
+                           <div class="choice-fuel-thumb d-lg-flex d-block align-items-center">
                               <div class="choice-fuel-img">
                                  <img src="./images/diesel.svg" alt="">
                                  <div class="choice-fuel-bg-circle"></div>
                               </div>
-                              <span class="ml-3 fs-13 fw-600">Diesel</span>
+                              <div class="ml-3 fs-13 fw-600">Diesel</div>
                            </div>
-                           <div class="choice-fuel-icon">
+                           <div class="choice-fuel-icon d-lg-block d-none">
                               <ion-icon name="chevron-forward-outline" class="fs-20 text-gray-aa"></ion-icon>
                            </div>
                         </a>
                      </div>
                      <div class="choice-fuel-item">
                         <a href="#" class="d-flex align-items-center justify-content-between">
-                           <div class="choice-fuel-thumb d-flex align-items-center">
+                           <div class="choice-fuel-thumb d-lg-flex d-block align-items-center">
                               <div class="choice-fuel-img">
                                  <img src="./images/cng.svg" alt="">
                                  <div class="choice-fuel-bg-circle"></div>
                               </div>
-                              <span class="ml-3 fs-13 fw-600">CNG</span>
+                              <div class="ml-3 fs-13 fw-600">CNG</div>
                            </div>
-                           <div class="choice-fuel-icon">
+                           <div class="choice-fuel-icon d-lg-block d-none">
                               <ion-icon name="chevron-forward-outline" class="fs-20 text-gray-aa"></ion-icon>
                            </div>
                         </a>
                      </div>
                      <div class="choice-fuel-item">
                         <a href="#" class="d-flex align-items-center justify-content-between">
-                           <div class="choice-fuel-thumb d-flex align-items-center">
+                           <div class="choice-fuel-thumb d-lg-flex d-block align-items-center">
                               <div class="choice-fuel-img">
                                  <img src="./images/electric.svg" alt="">
                                  <div class="choice-fuel-bg-circle"></div>
                               </div>
-                              <span class="ml-3 fs-13 fw-600">Electric</span>
+                              <div class="ml-3 fs-13 fw-600">Electric</div>
                            </div>
-                           <div class="choice-fuel-icon">
+                           <div class="choice-fuel-icon d-log-block d-none">
                               <ion-icon name="chevron-forward-outline" class="fs-20 text-gray-aa"></ion-icon>
                            </div>
                         </a>
@@ -850,7 +1040,7 @@
       <!-- end find the cars of your choice -->
       <!-- top cars in idia -->
       <section class="featured-car w-992 py-3">
-         <h1 class="featured-title fs-22 fw-600 py-2">Top Cars In India</h1>
+         <h1 class="featured-title fs-22 fw-600 py-2 px-lg-0 px-3">Top Cars In India</h1>
          <div>
             <div class="tab-content py-2">
                <div class="tab-panes active">
@@ -957,20 +1147,21 @@
       </section>
        <!-- end top cars in idia -->
        <!-- banner center -->
-       <section class="banner-center position-relative w-100 pt-3">
+       <section class="banner-center position-relative w-100 pt-lg-3">
           <div class="banner-center-img">
-             <img src="./images/get-final-price-banner.jpg" alt="">
+             <img src="./images/get-final-price-banner.jpg" alt="" class="d-lg-block d-none">
+             <img src="./images/get-final.jpg" alt="" class="d-lg-none d-block">
              <div class="position-absolute banner-center-wrapper">
                 <div class="banner-center-content">
                    <h1 class="banner-top__title fs-22 text-white fw-600">Check On Road Price</h1>
                    <form action="" id="form-3">
-                     <div class="search-form-header form-group-t position-relative mt-4">
+                     <div class="search-form-header form-group-t position-relative mt-lg-4 mt-3">
                         <input type="text" name="search-2" id="search-banner-center" class="form-control-t pl-5 focus-border-blule" placeholder="Type to select cars name, e.g: Tata Tiago" autocomplete="off">
                         <div class="position-absolute search-banner-center">
                            <ion-icon name="search-outline" class="fs-26 md hydrated" role="img" aria-label="search outline"></ion-icon>
                         </div>
                      </div>
-                     <div class="select-city mt-4 bg-white rounded d-flex align-items-center justify-content-between px-3">
+                     <div class="select-city mt-lg-4 mt-3 bg-white rounded d-flex align-items-center justify-content-between px-3">
                         <div class="text-gray-aa">Select City</div>
                         <ion-icon name="chevron-forward-outline" class="fs-20 text-gray-aa"></ion-icon>
                      </div>
@@ -983,7 +1174,7 @@
        <!-- end banner center -->
        <!-- compare cars -->
        <section class="featured-car w-992 py-3">
-         <h1 class="featured-title fs-22 fw-600 py-2">Compare Cars</h1>
+         <h1 class="featured-title fs-22 fw-600 py-2 px-lg-0 px-3">Compare Cars</h1>
          <div>
             <div class="tab-content py-2">
                <div class="tab-panes active">
@@ -1133,7 +1324,7 @@
                   <!-- -------------------------------------------------------------------- -->
                </div>
                <!-- -------------------------------------------------------------------- -->
-               <div class="text-panes active">
+               <div class="text-panes active px-lg-0 px-3">
                   <a href="#" class="d-flex align-items-center fw-600">
                      <span class=" fs-15 text-blue-02 fw-600">More Comparisons</span> 
                      <ion-icon name="chevron-forward-outline" class="ml-2 fs-20 text-blue-02"></ion-icon>
@@ -1145,7 +1336,7 @@
        <!-- end compare cars -->
        <!-- popular used cars -->
        <section class="featured-car w-992 py-3">
-         <h1 class="featured-title fs-22 fw-600 py-2">Popular Used Cars</h1>
+         <h1 class="featured-title fs-22 fw-600 py-2 px-lg-0 px-3">Popular Used Cars</h1>
          <div>
             <div class="tab-content py-2">
                <div class="tab-panes active">
@@ -1248,7 +1439,7 @@
                </div>
                <!-- -------------------------------------------------------------------- -->
                <!-- -------------------------------------------------------------------- -->
-               <div class="text-panes active">
+               <div class="text-panes active px-lg-0 px-3">
                   <a href="#" class="d-flex align-items-center fw-600">
                      <span class=" fs-15 text-blue-02 fw-600">View All Used Cars</span> 
                      <ion-icon name="chevron-forward-outline" class="ml-2 fs-20 text-blue-02"></ion-icon>
@@ -1260,14 +1451,14 @@
        <!-- end popular used cars -->
        <!-- latest car updates -->
        <section class="featured-car w-992 py-3">
-         <h1 class="featured-title fs-22 fw-600 py-2">Latest Car Updates</h1>
+         <h1 class="featured-title fs-22 fw-600 py-2 px-lg-0 px-3">Latest Car Updates</h1>
          <div>
-            <div class="tabs d-flex align-items-center line-e1">
+            <div class="tabs d-flex align-items-center line-e1 px-lg-0 px-3">
                <div class="tab-item active text-uppercase fs-13 py-3 fw-600">Cars News</div>
                <div class="tab-item text-uppercase fs-13 py-3 fw-600">expert reviews</div>
                <div class="tab-item text-uppercase fs-13 py-3 fw-600">video</div>
             </div>
-            <div class="tab-content py-3">
+            <div class="tab-content py-lg-3 py-2">
                <div class="tab-panes active">
                   <!-- -------------------------------------------------------------------- -->
                   <div class="tab-panes-block">
@@ -1363,7 +1554,7 @@
                   <!-- -------------------------------------------------------------------- -->
                </div>
                <!-- -------------------------------------------------------------------- -->
-               <div class="text-panes active">
+               <div class="text-panes active px-lg-0 px-3">
                   <a href="#" class="d-flex align-items-center fw-600">
                      <span class=" fs-15 text-blue-02 fw-600">View All Popular Cars</span> 
                      <ion-icon name="chevron-forward-outline" class="ml-2 fs-20 text-blue-02"></ion-icon>
@@ -1466,7 +1657,7 @@
                </div>
 
                <!-- -------------------------------------------------------------------- -->
-               <div class="text-panes">
+               <div class="text-panes px-lg-0 px-3">
                   <a href="#" class="d-flex align-items-center fw-600">
                      <span class=" fs-15 text-blue-02 fw-600">View All Just Launched Cars </span> 
                      <ion-icon name="chevron-forward-outline" class="ml-2 fs-20 text-blue-02"></ion-icon>
@@ -1571,7 +1762,7 @@
                </div>
 
                <!-- -------------------------------------------------------------------- -->
-               <div class="text-panes">
+               <div class="text-panes px-lg-0 px-3">
                   <a href="#" class="d-flex align-items-center fw-600">
                      <span class=" fs-15 text-blue-02 fw-600">View All Upcoming Cars </span> 
                      <ion-icon name="chevron-forward-outline" class="ml-2 fs-20 text-blue-02"></ion-icon>
@@ -1603,19 +1794,20 @@
       <section class="w-992 footer-main">
          <div class="footer-main-wrapper">
             <div class="footer-main-wrapper__left px-2">
-               <div class="d-flex align-items-center f-13 text-white-80 py-2 px-1">
+               <a href="#" class="d-lg-none d-block fs-14 text-white-80 pr-2 footer-main-wrapper__left__text">About us</a>
+               <div class="d-flex align-items-center f-13 text-white-80 py-2 px-lg-1 pl-2">
                   <div>Language:</div>
                   <div class="pl-2">English</div>
                   <div class="pl-4">VN</div>
                </div>
-               <ul class="footer-main-wrapper__left-list">
+               <ul class="footer-main-wrapper__left-list d-log-block d-none">
                   <li class="py-2 px-1"><a href="#" class="fs-13 text-white-80 py-2">About us</a></li>
                   <li class="py-2 px-1"><a href="#" class="fs-13 text-white-80 py-2">Terms & Condition</a></li>
                   <li class="py-2 px-1"><a href="#" class="fs-13 text-white-80 py-2">Careers</a></li>
                   <li class="py-2 px-1"><a href="#" class="fs-13 text-white-80 py-2">Advertise</a></li>
                </ul>
             </div>
-            <div class="footer-main-wrapper__center px-5 text-white-80">
+            <div class="footer-main-wrapper__center px-5 text-white-80 d-lg-block d-none">
                <div class="">Part of</div>
                <div class="footer-main-wrapper__center-img mt-2 mb-3">
                   <img src="./images/cartrade-tech-logo-white.svg" alt="">
@@ -1623,7 +1815,7 @@
                <p class="fs-13"><span class="fw-600">CarTrade Tech:</span> 12th Floor, Vishwaroop IT Park, Sector 30A, Vashi, Navi Mumbai - 400705. Maharashtra, India.</p>
                <p class="fs-13 pt-1">Phone: +91 (22) 612 91700</p>
             </div>
-            <div class="footer-main-wrapper__right px-2 text-white-80 px-4">
+            <div class="footer-main-wrapper__right px-2 text-white-80 px-4 d-lg-block d-none">
                <p class="fs-13">Download Mobile App</p>
                <div class="footer-main-wrapper__right-app d-flex align-items-center mt-3">
                   <a href="#">
@@ -1654,11 +1846,57 @@
                   </div>
                </div>
             </div>
+            <div class="d-lg-none d-block py-4">
+               <div class="pb-4 text-center">
+                  <p class="fs-13 text-white-80">Download Mobile App</p>
+                  <div class="footer-main-wrapper__right-app d-flex align-items-center justify-content-center mt-3">
+                     <a href="#">
+                        <img src="./images/app-store.svg" alt="" class="mr-3">
+                     </a>
+                     <a href="#">
+                        <img src="./images/play-store.svg" alt="">
+                     </a>
+                  </div>
+               </div>
+               <div class="px-5 pb-4" style="border-top: 1px solid #ffffff1c;border-bottom: 1px solid #ffffff1c;">
+                  <div class="d-flex align-items-center justify-content-center py-4">
+                     <div class="text-white-80">Part of</div>
+                     <div class="footer-main-wrapper__center-img ml-3">
+                        <img src="./images/cartrade-tech-logo-white.svg" alt="">
+                     </div>
+                  </div>
+                  <p class="fs-13 text-center text-white-80"><span class="fw-600">CarTrade Tech:</span> 12th Floor, Vishwaroop IT Park, Sector 30A, Vashi, Navi Mumbai - 400705. Maharashtra, India.</p>
+                  <p class="fs-13 pt-1 text-center text-white-80">Phone: +91 (22) 612 91700</p>
+               </div>
+               <div>
+                  <div class="footer-main-wrapper__right-connect mt-4 text-white-80">
+                     <p class="fs-13 text-center">Connect with us</p>
+                     <div class="footer-main-wrapper__right-share d-flex align-items-center justify-content-center">
+                        <a href="#">
+                           <svg class="o-dlrcWp o-eoatGj o-cqgkZn o-euTeMg o-eVIFUq o-cUSgRL " viewBox="0 0 16 16" fill="currentcolor" color="rgba(255, 255, 255, 0.5)" tabindex="-1" focusable="false" aria-hidden="true" role="img"><path d="M8 15.9A7.9 7.9 0 1115.9 8 7.9 7.9 0 018 15.9zM8 .76A7.24 7.24 0 1015.24 8 7.25 7.25 0 008 .76zM9.51 6.4H8.22v-.94c0-.36.22-.44.36-.44h.91V3.46H8.24a1.7 1.7 0 00-1.71 1.9v1h-.8V8h.8v4.54h1.69V8h1.15z"></path></svg>
+                        </a>
+                        <a href="#">
+                           <svg class="o-dlrcWp o-eoatGj o-cqgkZn o-euTeMg o-eVIFUq o-cUSgRL " viewBox="0 0 16 16" fill="currentcolor" color="rgba(255, 255, 255, 0.5)" tabindex="-1" focusable="false" aria-hidden="true" role="img"><path d="M8 15.9A7.9 7.9 0 1115.9 8 7.9 7.9 0 018 15.9zM8 .76A7.24 7.24 0 1015.24 8 7.25 7.25 0 008 .76zm4.87 4.66a3.46 3.46 0 01-1.07.29 1.83 1.83 0 00.82-1 3.77 3.77 0 01-1.18.46 1.84 1.84 0 00-1.36-.59 1.89 1.89 0 00-1.82 2.26 5.31 5.31 0 01-3.84-1.95 1.83 1.83 0 00-.25.94A1.88 1.88 0 005 7.38a1.82 1.82 0 01-.84-.24A1.85 1.85 0 005.65 9a1.84 1.84 0 01-.84 0 1.87 1.87 0 001.74 1.29 4.28 4.28 0 01-2.76.77 5.29 5.29 0 008.15-4.7 3.73 3.73 0 00.93-.94z"></path></svg>
+                        </a>
+                        <a href="#">
+                           <svg class="o-dlrcWp o-eoatGj o-cqgkZn o-euTeMg o-eVIFUq o-cUSgRL " viewBox="0 0 16 16" fill="currentcolor" color="rgba(255, 255, 255, 0.5)" tabindex="-1" focusable="false" aria-hidden="true" role="img"><path d="M8 15.9A7.9 7.9 0 1115.9 8 7.9 7.9 0 018 15.9zM8 .76A7.24 7.24 0 1015.24 8 7.25 7.25 0 008 .76zm4.73 5.06a1.23 1.23 0 00-.87-.88A30.46 30.46 0 008 4.74a30.46 30.46 0 00-3.86.2 1.23 1.23 0 00-.87.88 12.89 12.89 0 00-.21 2.4 12.8 12.8 0 00.21 2.39 1.21 1.21 0 00.87.88A29 29 0 008 11.7a29 29 0 003.86-.21 1.21 1.21 0 00.87-.88 12.8 12.8 0 00.21-2.39 12.89 12.89 0 00-.21-2.4zM7 9.69V6.75l2.57 1.47z"></path></svg>
+                        </a>
+                        <a href="#">
+                           <svg class="o-dlrcWp o-eoatGj o-cqgkZn o-euTeMg o-eVIFUq o-cUSgRL " viewBox="0 0 16 16" fill="currentcolor" color="rgba(255, 255, 255, 0.5)" tabindex="-1" focusable="false" aria-hidden="true" role="img"><path d="M8 15.9A7.9 7.9 0 1115.9 8 7.9 7.9 0 018 15.9zM8 .76A7.24 7.24 0 1015.24 8 7.25 7.25 0 008 .76zM9.68 11V8.85c0-.54-.19-.9-.67-.9a.75.75 0 00-.69.48 1.11 1.11 0 000 .33V11H7V7h1.28v.57a1.33 1.33 0 011.2-.66c.87 0 1.53.57 1.53 1.8V11zM5.55 6.45a.7.7 0 110-1.39.68.68 0 01.73.69.7.7 0 01-.73.7zM6.21 11H4.89V7h1.32zm5.49-7.42H4.2a.64.64 0 00-.65.63v7.59a.64.64 0 00.65.63h7.5a.64.64 0 00.65-.63V4.21a.64.64 0 00-.65-.63z"></path></svg>
+                        </a>
+                        <a href="#">
+                           <svg class="o-dlrcWp o-eoatGj o-cqgkZn o-euTeMg o-eVIFUq o-cUSgRL " viewBox="0 0 16 16" fill="currentcolor" color="rgba(255, 255, 255, 0.5)" tabindex="-1" focusable="false" aria-hidden="true" role="img"><path d="M8 15.81A7.81 7.81 0 1115.81 8 7.81 7.81 0 018 15.81zm0-15A7.19 7.19 0 1015.19 8 7.2 7.2 0 008 .81zm0 3.6h1.77a2.43 2.43 0 01.81.15 1.29 1.29 0 01.5.33 1.29 1.29 0 01.33.5 2.43 2.43 0 01.15.81v3.54a2.43 2.43 0 01-.15.81 1.49 1.49 0 01-.83.83 2.43 2.43 0 01-.81.15H6.23a2.43 2.43 0 01-.81-.15 1.29 1.29 0 01-.5-.33 1.29 1.29 0 01-.33-.5 2.43 2.43 0 01-.15-.81V7.97 6.2a2.43 2.43 0 01.15-.81 1.29 1.29 0 01.33-.5 1.29 1.29 0 01.5-.33 2.43 2.43 0 01.81-.15c.46.01.6 0 1.77 0zm0-.79H6.2a3.45 3.45 0 00-1.07.2 2.32 2.32 0 00-1.28 1.31 3.45 3.45 0 00-.2 1.07v3.6a3.45 3.45 0 00.2 1.07 2.21 2.21 0 00.51.77 2.35 2.35 0 00.77.51 3.45 3.45 0 001.07.2h3.6a3.45 3.45 0 001.07-.2 2.21 2.21 0 00.77-.51 2.35 2.35 0 00.51-.77 3.45 3.45 0 00.2-1.07V8 6.2a3.45 3.45 0 00-.2-1.07 2.32 2.32 0 00-1.28-1.28 3.45 3.45 0 00-1.07-.2c-.46-.02-.61-.03-1.8-.03zm2.9 2.09a.53.53 0 01-.53.53.53.53 0 010-1.06.53.53 0 01.53.53M8 5.75A2.25 2.25 0 1010.25 8 2.25 2.25 0 008 5.75zm0 3.71a1.46 1.46 0 01-1.26-.73 1.42 1.42 0 010-1.46A1.46 1.46 0 118 9.46z"></path></svg>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
          </div>
       </section>
       <section class="footer-bottom ">
          <div class="w-992 d-flex align-items-center p-3 justify-content-center">
-            <p class="fs-13 text-white-80 pr-3" style="border-right:1px solid #ffffff1c;">©  2006 - 2021. www.carwale.com</p>
+            <p class="fs-13 text-white-80 pr-3 d-lg-block d-none" style="border-right:1px solid #ffffff1c;">©  2006 - 2021. www.carwale.com</p>
+            <p class="fs-13 text-white-80 pr-3 d-lg-none d-block" >©  CarWale India</p>
             <p class="fs-13 text-white-80 pl-3">
                <a href="#" class="text-white-80">Visitor Agreement</a>
                <span>&</span>

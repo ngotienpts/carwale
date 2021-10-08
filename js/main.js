@@ -1,11 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
   //search
-  var searchHeaderPC = document.querySelector(".header-search");
-  var dropdownSearchHeaderPC = document.querySelector(".search-form-header");
-  var dropdownContentSearchHeader = document.querySelector(".search-dropdown");
+  var searchHeaderPC = document.querySelector(".header-search-pc");
+  var dropdownSearchHeaderPC = document.querySelector(".search-form-header-pc");
+  var dropdownContentSearchHeader = document.querySelector(".search-dropdown-pc");
 
   // change tab
   var featured = document.querySelectorAll(".featured-car");
+
+  // show popup
+  var openLogin = document.querySelector('.header-user');
+  var popupLogin = document.querySelector('.login-popup');
+  var closeLogin = document.querySelector('.login-popup-close');
+  var popupField = document.querySelector('.login-popup-field');
+
+  // show menu mb
+  var openMenuMb = document.querySelector('.header-icon__bar');
+  var popupMenu = document.querySelector('.menu-mobile');
+  var menuField = document.querySelector('.menu-mb-field');
+  var subMenu = document.querySelectorAll('.is-show');
+
+  // show search mobile
+  var openSearchMobile = document.querySelector('.header-icon__search');
+  var popupSearchMobile = document.querySelector('.search-mobile');
+  var dropdownSearchHeaderMb = document.querySelector(".search-form-header-mb");
+  var dropdownContentSearchMb = document.querySelector(".search-dropdown-mb");
+  var searchMenuField = document.querySelector(".search-menu-field");
+
 
   const app = {
     handleEvent: function () {
@@ -21,6 +41,19 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!searchHeaderPC.contains(e.target)) {
           dropdownContentSearchHeader.classList.remove("show");
         }
+
+        if(!popupField.contains(e.target) && !e.target.matches('.header-icon__user')){
+          popupLogin.classList.remove('show');
+        }
+
+        if(!menuField.contains(e.target) && !e.target.matches('.header-icon__bar')){
+          popupMenu.classList.remove('show')
+        }
+
+        if(!searchMenuField.contains(e.target) && !e.target.matches('.header-icon__search')){
+          popupSearchMobile.classList.remove('show')
+        }
+
       });
 
       // change tab
@@ -68,6 +101,13 @@ document.addEventListener("DOMContentLoaded", function () {
                   slidesToScroll: 1,
                   arrows: true,
                   infinite: false,
+                  responsive:[
+                    {breakpoint:991,
+                    settings:{
+                      slidesToShow:1.5,
+                      arrows:false,
+                    }},
+                  ],
                 });
               }
             }
@@ -75,6 +115,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
       });
+
+      // show login
+      openLogin.onclick = function(){
+        popupLogin.classList.add('show');
+      }
+
+      // close login
+      closeLogin.onclick = function(){
+        popupLogin.classList.remove('show');
+      }
+      
+      // show menu mobile
+      openMenuMb.onclick = function(){
+        popupMenu.classList.add('show');
+        menuField.classList.add('show');
+      }
+      subMenu.forEach(function(a){
+        a.onclick = function(){
+          a.nextElementSibling.classList.toggle('show');
+          var getName = a.lastElementChild.lastElementChild;
+          if(getName.getAttribute('name') == 'chevron-down-outline'){
+            getName.setAttribute('name','chevron-up-outline')
+          }else {
+            getName.setAttribute('name','chevron-down-outline')
+          }
+        }
+      });
+
+      // show search mobile
+      openSearchMobile.onclick = function(){
+        popupSearchMobile.classList.add('show');
+      }
+      dropdownSearchHeaderMb.onclick = function(){
+        dropdownContentSearchMb.classList.add('show');
+      }
+
     },
     tabActiveDefault:function(){
       $(".tab-panes.active").slick({
@@ -82,6 +158,13 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesToScroll: 1,
         arrows: true,
         infinite: false,
+        responsive:[
+          {breakpoint:991,
+          settings:{
+            slidesToShow:1.5,
+            arrows:false,
+          }},
+        ],
       });
     },
     start: function () {

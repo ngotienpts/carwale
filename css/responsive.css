@@ -1,0 +1,129 @@
+/*---------------------------------------------------------------------*/
+@media screen and (max-width: 991px) {
+  .featured-title {
+    font-size: 18px;
+  }
+
+  .brands {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .brand-content {
+    margin: 1rem;
+  }
+
+  .brand-item:nth-child(3n+0) {
+    border-right: none;
+  }
+
+  .tabs {
+    overflow-x: scroll;
+  }
+
+  .tabs::-webkit-scrollbar {
+    height: 0;
+    background-color: transparent;
+  }
+
+  .tab-item {
+    white-space: nowrap;
+  }
+
+  .tab-content {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .choice-pudget a {
+    font-size: 13px;
+  }
+
+  .choice-body {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .choice-body-item,
+.choice-fuel-item {
+    border-right: none;
+  }
+
+  .choice-body-item a {
+    padding: 12px;
+  }
+
+  .choice-fuel-item a {
+    padding: 12px 8px 12px;
+  }
+
+  .banner-center-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+    padding: 1rem;
+    width: 100%;
+    margin: auto;
+  }
+
+  .banner-top__title {
+    font-size: 18px;
+  }
+
+  .banner-center-img img {
+    min-height: 210px;
+  }
+
+  .banner-center-wrapper {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transform: none;
+  }
+
+  .footer-top svg {
+    width: 60px;
+    height: auto;
+  }
+
+  .footer-top-logo {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-main-wrapper {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .footer-main-wrapper__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.125rem 0;
+    border-bottom: 1px solid #ffffff1c;
+  }
+
+  .footer-main-wrapper__left__text {
+    border-right: 1px solid #ffffff1c;
+  }
+
+  .header-icon__search,
+.header-icon__location,
+.header-icon__bar {
+    font-size: 1.5rem !important;
+    cursor: pointer;
+  }
+
+  .haeder-logo img {
+    width: 120px;
+    height: auto;
+  }
+
+  .search-dropdown-mb {
+    top: 45px;
+  }
+}
+/*---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+
+/*# sourceMappingURL=responsive.css.map */
