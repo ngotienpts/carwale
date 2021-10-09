@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
   var dropdownContentSearchMb = document.querySelector(".search-dropdown-mb");
   var searchMenuField = document.querySelector(".search-menu-field");
 
+  //show search range
+  var openRange = document.querySelector('.search-banner-top-range__text');
+  var inputRange = document.querySelector('.search-banner-top-range-dropdown');
 
   const app = {
     handleEvent: function () {
@@ -52,6 +55,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if(!searchMenuField.contains(e.target) && !e.target.matches('.header-icon__search')){
           popupSearchMobile.classList.remove('show')
+        }
+
+        if(!inputRange.contains(e.target) && !e.target.matches('.search-banner-top-range__text')){
+          inputRange.classList.remove('show')
         }
 
       });
@@ -131,6 +138,13 @@ document.addEventListener("DOMContentLoaded", function () {
         popupMenu.classList.add('show');
         menuField.classList.add('show');
       }
+
+      // show input range
+      openRange.onclick = function(){
+        inputRange.classList.toggle('show')
+      }
+
+
       subMenu.forEach(function(a){
         a.onclick = function(){
           a.nextElementSibling.classList.toggle('show');
