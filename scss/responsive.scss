@@ -112,6 +112,15 @@
     .search-banner-top-range {
         display: none;
     }
+    .cate-item {
+        grid-template-columns: 1fr;
+    }
+    .search-form-cate {
+        width: 100%;
+    }
+    .detail-content{
+        display: block;
+    }
 }
 
 

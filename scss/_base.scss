@@ -78,6 +78,9 @@ img {
 .fs-15 {
   font-size: 0.9375rem;
 }
+.fs-18 {
+  font-size: 1.125rem;
+}
 .fs-20 {
   font-size: 1.25rem;
 }
@@ -208,6 +211,13 @@ img {
   color: #aaaaaa;
 }
 /*==================================================================*/
+.fix-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .fix-text2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -315,4 +325,8 @@ img {
 }
 .m-20 {
   margin: 1.25rem;
+}
+/*=================================================================*/ 
+.padding-t57 {
+  padding-top: 57px;
 }

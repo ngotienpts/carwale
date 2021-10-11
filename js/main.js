@@ -35,9 +35,130 @@ document.addEventListener("DOMContentLoaded", function () {
       const _this = this;
 
       // show search content header
-      dropdownSearchHeaderPC.onclick = function () {
-        dropdownContentSearchHeader.classList.add("show");
-      };
+      if(dropdownSearchHeaderPC){
+        dropdownSearchHeaderPC.onclick = function () {
+          dropdownContentSearchHeader.classList.add("show");
+        };
+      }
+
+      // change tab
+      if(featured){
+        featured.forEach(function (el) {
+          var items = el.querySelectorAll(".tab-item");
+          var tabs = el.querySelectorAll(".tab-panes");
+          var textTabs = el.querySelectorAll(".text-panes");
+          var choiceTabs = el.querySelectorAll(".tab-content-item");
+          items.forEach(function (item, index) {
+            item.onclick = function(){
+              var pane = tabs[index];
+              var text = textTabs[index];
+              var choice = choiceTabs[index];
+              if(el.querySelector(".tab-item.active")){
+                el.querySelector(".tab-item.active").classList.remove("active");
+              }
+              if(el.querySelector(".tab-panes.active")){
+                el.querySelector(".tab-panes.active").classList.remove("active");
+              }
+              if(el.querySelector(".text-panes.active")){
+                el.querySelector(".text-panes.active").classList.remove("active");
+              }
+              if(el.querySelector(".tab-content-item.active")){
+                el.querySelector(".tab-content-item.active").classList.remove("active");
+              }
+              // ----------------------------------------------------------------------
+              if(item){
+                item.classList.add("active");
+              }
+              if(pane){
+                pane.classList.add("active");
+              }
+              if(text){
+                text.classList.add("active");
+              }
+              if(choice){
+                choice.classList.add("active");
+              }
+              /**------------------------------------------------------------------------- */
+              if(pane){
+                if($(pane).hasClass('active') && !$(pane).hasClass('actived')) {
+                  $(pane).addClass('actived');
+                  $(pane).not('.slick-initialized').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    infinite: false,
+                    responsive:[
+                      {breakpoint:991,
+                      settings:{
+                        slidesToShow:1.5,
+                        arrows:false,
+                      }},
+                    ],
+                  });
+                }
+              }
+            };
+  
+          });
+        });
+      }
+
+      // show login
+      if(openLogin){
+        openLogin.onclick = function(){
+          popupLogin.classList.add('show');
+        };
+      }
+
+      // close login
+      if(closeLogin){
+        closeLogin.onclick = function(){
+          popupLogin.classList.remove('show');
+        };
+      }
+      
+      // show menu mobile
+      if(openMenuMb){
+        openMenuMb.onclick = function(){
+          popupMenu.classList.add('show');
+          menuField.classList.add('show');
+        };
+      }
+
+      // show input range
+      if(openRange){
+        openRange.onclick = function(){
+          if(inputRange){
+            inputRange.classList.toggle('show')
+          }
+        };
+      }
+
+      if(subMenu){
+        subMenu.forEach(function(a){
+          a.onclick = function(){
+            a.nextElementSibling.classList.toggle('show');
+            var getName = a.lastElementChild.lastElementChild;
+            if(getName.getAttribute('name') == 'chevron-down-outline'){
+              getName.setAttribute('name','chevron-up-outline')
+            }else {
+              getName.setAttribute('name','chevron-down-outline')
+            }
+          }
+        });
+      }
+
+      // show search mobile
+      if(openSearchMobile){
+        openSearchMobile.onclick = function(){
+          popupSearchMobile.classList.add('show');
+        }
+      }
+      if(dropdownSearchHeaderMb){
+        dropdownSearchHeaderMb.onclick = function(){
+          dropdownContentSearchMb.classList.add('show');
+        }
+      }
 
       // Khi click ra ngoai thì sẽ ẩn những element đã show
       document.addEventListener("click", function (e) {
@@ -57,113 +178,13 @@ document.addEventListener("DOMContentLoaded", function () {
           popupSearchMobile.classList.remove('show')
         }
 
-        if(!inputRange.contains(e.target) && !e.target.matches('.search-banner-top-range__text')){
-          inputRange.classList.remove('show')
-        }
-
-      });
-
-      // change tab
-      featured.forEach(function (el) {
-        var items = el.querySelectorAll(".tab-item");
-        var tabs = el.querySelectorAll(".tab-panes");
-        var textTabs = el.querySelectorAll(".text-panes");
-        var choiceTabs = el.querySelectorAll(".tab-content-item");
-        items.forEach(function (item, index) {
-          item.onclick = function(){
-            var pane = tabs[index];
-            var text = textTabs[index];
-            var choice = choiceTabs[index];
-            if(el.querySelector(".tab-item.active")){
-              el.querySelector(".tab-item.active").classList.remove("active");
-            }
-            if(el.querySelector(".tab-panes.active")){
-              el.querySelector(".tab-panes.active").classList.remove("active");
-            }
-            if(el.querySelector(".text-panes.active")){
-              el.querySelector(".text-panes.active").classList.remove("active");
-            }
-            if(el.querySelector(".tab-content-item.active")){
-              el.querySelector(".tab-content-item.active").classList.remove("active");
-            }
-            // ----------------------------------------------------------------------
-            if(item){
-              item.classList.add("active");
-            }
-            if(pane){
-              pane.classList.add("active");
-            }
-            if(text){
-              text.classList.add("active");
-            }
-            if(choice){
-              choice.classList.add("active");
-            }
-            /**------------------------------------------------------------------------- */
-            if(pane){
-              if($(pane).hasClass('active') && !$(pane).hasClass('actived')) {
-                $(pane).addClass('actived');
-                $(pane).not('.slick-initialized').slick({
-                  slidesToShow: 3,
-                  slidesToScroll: 1,
-                  arrows: true,
-                  infinite: false,
-                  responsive:[
-                    {breakpoint:991,
-                    settings:{
-                      slidesToShow:1.5,
-                      arrows:false,
-                    }},
-                  ],
-                });
-              }
-            }
-          };
-
-        });
-      });
-
-      // show login
-      openLogin.onclick = function(){
-        popupLogin.classList.add('show');
-      }
-
-      // close login
-      closeLogin.onclick = function(){
-        popupLogin.classList.remove('show');
-      }
-      
-      // show menu mobile
-      openMenuMb.onclick = function(){
-        popupMenu.classList.add('show');
-        menuField.classList.add('show');
-      }
-
-      // show input range
-      openRange.onclick = function(){
-        inputRange.classList.toggle('show')
-      }
-
-
-      subMenu.forEach(function(a){
-        a.onclick = function(){
-          a.nextElementSibling.classList.toggle('show');
-          var getName = a.lastElementChild.lastElementChild;
-          if(getName.getAttribute('name') == 'chevron-down-outline'){
-            getName.setAttribute('name','chevron-up-outline')
-          }else {
-            getName.setAttribute('name','chevron-down-outline')
+        if(inputRange){
+          if(!inputRange.contains(e.target) && !e.target.matches('.search-banner-top-range__text')){
+            inputRange.classList.remove('show')
           }
         }
       });
 
-      // show search mobile
-      openSearchMobile.onclick = function(){
-        popupSearchMobile.classList.add('show');
-      }
-      dropdownSearchHeaderMb.onclick = function(){
-        dropdownContentSearchMb.classList.add('show');
-      }
 
     },
     tabActiveDefault:function(){
@@ -181,11 +202,45 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
       });
     },
+    detailSlideTop:function(){
+      $(".detail-left-silde").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        infinite: false,
+        responsive:[
+          {breakpoint:991,
+          settings:{
+            slidesToShow:1,
+            arrows:false,
+          }},
+        ],
+      });
+    },
+    detailSlideRight:function(){
+      $(".detail-right-pane-item-slide").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        infinite: false,
+        responsive:[
+          {breakpoint:991,
+          settings:{
+            slidesToShow:1,
+            arrows:false,
+          }},
+        ],
+      });
+    },
     start: function () {
       // slider
       this.tabActiveDefault();
       // xử lý sự kiện
       this.handleEvent();
+      // slider detail top
+      this.detailSlideTop();
+      // slider detail right
+      this.detailSlideRight();
     },
   };
   app.start();
