@@ -18,6 +18,8 @@
   -ms-border-radius: 0.25rem;
   -o-border-radius: 0.25rem;
   background-color: #f9f9f9;
+  display: flex !important;
+  flex-direction: column;
 }
 
 .hovering-banner {
@@ -95,4 +97,17 @@
 .a-hover1,
 .a-hover1 a {
   color: #0288d1;
+}
+.tab-panes-block__thumb {
+  flex-shrink: 0;
+}
+.tab-panes-block__content {
+  flex:1;
+}
+.tab-panes-block__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
