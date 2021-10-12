@@ -314,6 +314,10 @@ img {
   background-color: #f9f9f9;
 }
 
+.bg-gray-fb {
+  background-color: #fbfbfb;
+}
+
 /*=================================================================*/
 .border-d5 {
   border: 1px solid #d5d5d5;
@@ -544,6 +548,15 @@ img {
 /*=================================================================*/
 .padding-t57 {
   padding-top: 57px;
+}
+
+/*=================================================================*/
+.font-opensan {
+  font-family: "Open Sans", sans-serif;
+}
+
+.gont-lato {
+  font-family: "Lato", sans-serif;
 }
 
 #header {
@@ -1590,6 +1603,44 @@ img {
 
 .brand-item-detail:nth-child(3n+0) {
   border-right: none;
+}
+
+.seo-description__th {
+  padding: 0.75rem 1.25rem;
+  background-color: #fbfbfb;
+  width: 50%;
+  text-align: left;
+  color: #aaa;
+  font-weight: 700;
+  border: 1px solid #ddd;
+}
+
+.seo-description__td {
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.seo-description__td--link {
+  color: #0288D1;
+  font-weight: 700;
+}
+
+.seo-description__td--link:hover {
+  color: #0288D1;
+  text-decoration: underline;
+}
+
+.read-more {
+  cursor: pointer;
+}
+
+.seo-descript__table-div {
+  display: none;
+}
+
+.seo-descript__table-div.active {
+  display: block;
 }
 
 .footer {

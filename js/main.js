@@ -34,6 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var listTabDetailRight = document.querySelectorAll('.detail-right-tab-item');
   var listTabDetailContent = document.querySelectorAll('.detail-right-pane-items');
 
+  // show read more car used
+  var readMore = document.querySelector('.read-more');
+  var tableUsedCar = document.querySelector('.seo-descript__table-div');
+
 
   const app = {
     handleEvent: function () {
@@ -183,6 +187,15 @@ document.addEventListener("DOMContentLoaded", function () {
       if(dropdownSearchHeaderMb){
         dropdownSearchHeaderMb.onclick = function(){
           dropdownContentSearchMb.classList.add('show');
+        }
+      }
+
+      // show read more used car
+      if(readMore){
+        readMore.onclick = function(){
+          if(tableUsedCar){
+            tableUsedCar.classList.add('active')
+          }
         }
       }
 
