@@ -1555,7 +1555,6 @@ img {
 .detail-brands {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-right: 1px solid #e1e1e1;
 }
 
 .detail-right-pane-items {
@@ -1564,6 +1563,15 @@ img {
 
 .detail-right-pane-items.active {
   display: block;
+}
+
+.detail-brands-block {
+  border: 1px solid #e1e1e1;
+  border-radius: 0.25rem;
+}
+
+.brand-item-detail:nth-child(3n+0) {
+  border-right: none;
 }
 
 .footer {
