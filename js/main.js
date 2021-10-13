@@ -38,6 +38,19 @@ document.addEventListener("DOMContentLoaded", function () {
   var readMore = document.querySelector('.read-more');
   var tableUsedCar = document.querySelector('.seo-descript__table-div');
 
+  // show used-left
+  var showUsedContent = document.querySelectorAll('.used-left-header');
+
+  // show popup
+  var openSeller = document.querySelectorAll('.get-seller-detail');
+  var popupSeller = document.querySelector('.seller-detail');
+  var sellerField = document.querySelector('.seller-detail-field');
+  var closeSeller = document.querySelectorAll('.seller-popup-close');
+
+
+  // show list img detail
+  var openListImg = document.querySelectorAll('.img-right-bg-hover');
+  var popupListImg = document.querySelector('.list-imb-slide');
 
   const app = {
     handleEvent: function () {
@@ -194,9 +207,62 @@ document.addEventListener("DOMContentLoaded", function () {
       if(readMore){
         readMore.onclick = function(){
           if(tableUsedCar){
-            tableUsedCar.classList.add('active')
+            if(tableUsedCar.classList.contains('active')){
+              tableUsedCar.classList.remove('active');
+              readMore.innerText = 'Read More';
+            }else{
+              tableUsedCar.classList.add('active');
+              readMore.innerText = 'Collapse';
+            }
           }
         }
+      }
+
+      // show used left
+      if(showUsedContent){
+        showUsedContent.forEach(function(a,b){
+          a.onclick = function(){
+            a.nextElementSibling.classList.toggle('active');
+            var chageIcon = a.querySelector('.used-left-header__icon');
+            if(chageIcon){
+              if(chageIcon.getAttribute('name') == 'chevron-up-outline'){
+                chageIcon.setAttribute('name','chevron-down-outline')
+              }else{
+                chageIcon.setAttribute('name','chevron-up-outline')
+              }
+            }
+          }
+        })
+      }
+
+      // show seller detail
+      if(openSeller){
+        openSeller.forEach(function(a){
+          a.onclick = function(){
+            if(popupSeller){
+              popupSeller.classList.add('show')
+            }
+          }
+        });
+        if(closeSeller){
+          closeSeller.forEach(function(b){
+            b.onclick = function(){
+              popupSeller.classList.remove('show')
+            }
+          })
+        }
+      }
+
+
+      // show list img detail
+      if(openListImg){
+        openListImg.forEach(function(c){
+          c.onclick = function(){
+            if(popupListImg){
+              popupListImg.classList.add('show')
+            }
+          }
+        })
       }
 
       // Khi click ra ngoai thì sẽ ẩn những element đã show
@@ -220,6 +286,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if(inputRange){
           if(!inputRange.contains(e.target) && !e.target.matches('.search-banner-top-range__text')){
             inputRange.classList.remove('show')
+          }
+        }
+
+        if(sellerField){
+          if(!sellerField.contains(e.target) && !e.target.matches('.get-seller-detail')){
+            popupSeller.classList.remove('show')
           }
         }
       });

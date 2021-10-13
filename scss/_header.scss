@@ -215,7 +215,9 @@
 }
 .login-popup,
 .menu-mobile,
-.search-mobile {
+.search-mobile,
+.seller-detail,
+.list-imb-slide {
   position: fixed;
   right: 0;
   left: 0;
@@ -230,11 +232,14 @@
 }
 .login-popup.show,
 .menu-mobile.show,
-.search-mobile.show {
+.search-mobile.show,
+.seller-detail.show,
+.list-imb-slide.show {
   display: block;
   opacity: 1;
 }
-.login-popup-field{
+.login-popup-field,
+.seller-detail-field{
   top: 50%;
   left: 50%;
   width: 30rem;
@@ -246,7 +251,8 @@
 .login-popup-header {
  padding: 1.25rem 1rem;
 }
-.login-popup-close {
+.login-popup-close,
+.seller-popup-close {
   top: -13px;
   right: 13px;
   background: #fbfbfb;
@@ -307,4 +313,13 @@
 }
 .menu-mb-dropdown-item {
   padding: 0.75rem 0.75rem 0.75rem 3.5rem;
+}
+.seller-detail-field {
+  max-width: 340px;
+}
+.seller-detail-content {
+  padding: 30px 30px 10px;
+}
+.seller-detail-form {
+  padding: 0 30px 30px;
 }
