@@ -1934,12 +1934,14 @@ img {
   transition: all 0.2s;
 }
 
-.detail-used-right-field {
+.detail-used-right-field,
+.used-left-field {
   height: 100%;
   position: relative;
 }
 
-.detail-used-right-wrapper {
+.detail-used-right-wrapper,
+.used-left-wrapper {
   position: sticky;
   top: 75px;
 }
