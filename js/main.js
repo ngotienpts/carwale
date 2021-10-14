@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // show list img detail
   var openListImg = document.querySelectorAll('.img-right-bg-hover');
   var popupListImg = document.querySelector('.list-imb-slide');
+  var closeListImg = document.querySelector('.list-img-popup-close');
+  var fieldListImg = document.querySelector('.list-img-slide-field');
 
   const app = {
     handleEvent: function () {
@@ -70,11 +72,15 @@ document.addEventListener("DOMContentLoaded", function () {
           var tabs = el.querySelectorAll(".tab-panes");
           var textTabs = el.querySelectorAll(".text-panes");
           var choiceTabs = el.querySelectorAll(".tab-content-item");
+          var detailUsedTabs = el.querySelectorAll(".detail-used-left_tab-pane");
+
           items.forEach(function (item, index) {
             item.onclick = function(){
               var pane = tabs[index];
               var text = textTabs[index];
               var choice = choiceTabs[index];
+              var detailUsedContent = detailUsedTabs[index];
+
               if(el.querySelector(".tab-item.active")){
                 el.querySelector(".tab-item.active").classList.remove("active");
               }
@@ -87,9 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
               if(el.querySelector(".tab-content-item.active")){
                 el.querySelector(".tab-content-item.active").classList.remove("active");
               }
+              if(el.querySelector(".detail-used-left_tab-pane.active")){
+                el.querySelector(".detail-used-left_tab-pane.active").classList.remove("active");
+              }
               // ----------------------------------------------------------------------
               if(item){
                 item.classList.add("active");
+                item.scrollIntoView({behavior: "smooth",block:"nearest", inline: "center"});
               }
               if(pane){
                 pane.classList.add("active");
@@ -99,6 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
               }
               if(choice){
                 choice.classList.add("active");
+              }
+              if(detailUsedContent){
+                detailUsedContent.classList.add("active");
               }
               /**------------------------------------------------------------------------- */
               if(pane){
@@ -259,10 +272,17 @@ document.addEventListener("DOMContentLoaded", function () {
         openListImg.forEach(function(c){
           c.onclick = function(){
             if(popupListImg){
-              popupListImg.classList.add('show')
+              popupListImg.classList.add('show');
+              // slider list detail img
+              _this.slideListDetailImg();
             }
           }
-        })
+        });
+        if(closeListImg){
+          closeListImg.onclick = function(){
+            popupListImg.classList.remove('show')
+          }
+        }
       }
 
       // Khi click ra ngoai thì sẽ ẩn những element đã show
@@ -292,6 +312,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if(sellerField){
           if(!sellerField.contains(e.target) && !e.target.matches('.get-seller-detail')){
             popupSeller.classList.remove('show')
+          }
+        }
+
+        if(fieldListImg){
+          if(!fieldListImg.contains(e.target) && !e.target.matches('.img-right-bg-hover')){
+            popupListImg.classList.remove('show')
           }
         }
       });
@@ -343,6 +369,43 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
       });
     },
+    slideListDetailImg:function(){
+      $('.list-img-slide__avatar').not('.slick-initialized').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.list-img-slide__thumb'
+      });
+      $('.list-img-slide__thumb').not('.slick-initialized').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        asNavFor: '.list-img-slide__avatar',
+        focusOnSelect: true,
+        responsive:[
+          {breakpoint:991,
+          settings:{
+            slidesToShow:4,
+            arrows:false,
+          }},
+        ],
+      });
+    },
+    detailUsedSlider:function(){
+      $(".detail-used-left__slider").slick({
+        slidesToShow: 2.5,
+        slidesToScroll: 1,
+        arrows: true,
+        infinite: false,
+        responsive:[
+          {breakpoint:991,
+          settings:{
+            slidesToShow:1,
+            arrows:false,
+          }},
+        ],
+      });
+    },
     start: function () {
       // slider
       this.tabActiveDefault();
@@ -352,6 +415,8 @@ document.addEventListener("DOMContentLoaded", function () {
       this.detailSlideTop();
       // slider detail right
       this.detailSlideRight();
+      // slider detail used
+      this.detailUsedSlider();
     },
   };
   app.start();

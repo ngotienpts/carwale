@@ -147,8 +147,31 @@
   }
 
   .used-wrapper,
-.used-right-wrapper {
+.used-right-wrapper,
+.detail-used-wrapper {
     display: block;
+  }
+
+  .detail-used-left_tabs {
+    overflow-x: scroll;
+  }
+
+  .detail-used-left_tabs::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+  }
+
+  .paging + .paging {
+    margin-left: 0.5rem;
+  }
+
+  .page-next {
+    margin-left: 1rem;
+  }
+
+  .page-prev {
+    margin-right: 0.5rem;
   }
 }
 /*---------------------------------------------------------------------*/

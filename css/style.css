@@ -227,6 +227,10 @@ img {
   font-size: 0.9375rem;
 }
 
+.fs-16 {
+  font-size: 1rem;
+}
+
 .fs-18 {
   font-size: 1.125rem;
 }
@@ -269,40 +273,44 @@ img {
 }
 
 /*===========================================================================*/
-.text-gray-b5 {
-  color: #b5b5b5;
-}
-
 .text-gray-48 {
   color: #484848;
-}
-
-.text-gray-6f {
-  color: #6f6f6f;
-}
-
-.text-gray-aa {
-  color: #aaaaaa;
-}
-
-.text-gray-d5 {
-  color: #d5d5d5;
-}
-
-.text-gray-e1 {
-  color: #e1e1e1;
 }
 
 .text-gray-56 {
   color: #565a5c;
 }
 
+.text-gray-75 {
+  color: #757575;
+}
+
+.text-gray-82 {
+  color: #82888b;
+}
+
+.text-gray-aa {
+  color: #aaaaaa;
+}
+
+.text-gray-e1 {
+  color: #e1e1e1;
+}
+
 .text-gray-1a {
   color: #1a1a1a;
 }
 
-.text-gray-75 {
-  color: #757575;
+.text-gray-b5 {
+  color: #b5b5b5;
+}
+
+.text-gray-d5 {
+  color: #d5d5d5;
+}
+
+.text-gray-6f {
+  color: #6f6f6f;
 }
 
 .text-cyan-0a {
@@ -632,8 +640,21 @@ img {
   font-family: "Open Sans", sans-serif;
 }
 
-.gont-lato {
+.font-lato {
   font-family: "Lato", sans-serif;
+}
+
+/*=================================================================*/
+.hover-color-02:hover {
+  color: #0288d1;
+}
+
+.text-decoration {
+  text-decoration: underline;
+}
+
+.text-decoration:hover {
+  text-decoration: underline;
 }
 
 #header {
@@ -1011,6 +1032,13 @@ img {
 
 .seller-detail-form {
   padding: 0 30px 30px;
+}
+
+.list-img-slide-field {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .banner-top {
@@ -1802,6 +1830,118 @@ img {
 
 .img-right-hover:hover .img-right-bg-hover {
   opacity: 1;
+}
+
+.list-img-popup-close {
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.list-img-slide__thumb .slick-prev:hover,
+.list-img-slide__thumb .slick-next:hover {
+  background-color: #fff;
+}
+
+.detail-used-wrapper {
+  display: grid;
+  grid-template-columns: calc(100% - 320px) 300px;
+  grid-gap: 20px;
+}
+
+.cw-used-sprite {
+  background: url(https://imgd.aeplcdn.com/0x0/cw/static/sprites/cwusedsprite.png?201612281409183678) no-repeat;
+  display: inline-block;
+}
+
+.calender-icon {
+  background-position: 0 0;
+  width: 29px;
+  height: 31px;
+}
+
+.kilo-meters {
+  background-position: -37px 0;
+  width: 35px;
+  height: 31px;
+}
+
+.petrol {
+  background-position: 0 -37px;
+  width: 20px;
+  height: 31px;
+}
+
+.manual {
+  background-position: -81px 0;
+  width: 33px;
+  height: 31px;
+}
+
+.location {
+  background-position: -124px 0;
+  width: 24px;
+  height: 31px;
+}
+
+.detail-used-left_tab-item {
+  border-bottom: 2px;
+  text-align: center;
+  cursor: pointer;
+  color: #565a5c;
+}
+
+.detail-used-left_tab-item.active {
+  border-bottom: 3px solid #ef3f30;
+  color: #565a5c;
+}
+
+.detail-used-left_tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid #d5d5d5;
+}
+
+.detail-used-left_tab-pane {
+  display: none;
+}
+
+.detail-used-left_tab-pane.active {
+  display: block;
+}
+
+.detail-used-left_tab-li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.detail-used-left-more-cars-list:hover .detail-used-left-more-cars-dot {
+  background-color: #ef3f30;
+}
+
+.detail-used-left-more-cars-list:hover .detail-used-left-more-cars-link {
+  text-decoration: underline;
+  color: #0288d1;
+}
+
+.detail-used-left-more-cars-dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  display: inline-block;
+  background: #ccc;
+  margin-right: 0.625rem;
+  transition: all 0.2s;
+}
+
+.detail-used-right-field {
+  height: 100%;
+  position: relative;
+}
+
+.detail-used-right-wrapper {
+  position: sticky;
+  top: 75px;
 }
 
 .footer {

@@ -84,3 +84,12 @@
 .img-right-hover:hover .img-right-bg-hover{
     opacity: 1;
 }
+.list-img-popup-close {
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+.list-img-slide__thumb .slick-prev:hover,
+.list-img-slide__thumb .slick-next:hover {
+    background-color: #fff;
+}

@@ -78,6 +78,9 @@ img {
 .fs-15 {
   font-size: 0.9375rem;
 }
+.fs-16 {
+  font-size: 1rem;
+}
 .fs-18 {
   font-size: 1.125rem;
 }
@@ -110,33 +113,37 @@ img {
   font-weight: 900;
 }
 /*===========================================================================*/
-.text-gray-b5 {
-  color: $text-gray-b5;
-}
 .text-gray-48 {
   color: $text-gray-48;
-}
-.text-gray-6f {
-  color: $text-gray-6f;
-}
-.text-gray-aa {
-  color: $text-gray-aa;
-}
-.text-gray-d5 {
-  color: #d5d5d5;
-}
-.text-gray-e1 {
-  color: $text-gray-e1;
 }
 .text-gray-56 {
   color: #565a5c;
 }
-.text-gray-1a {
-  color: #1a1a1a;
-}
 .text-gray-75 {
   color: #757575;
 }
+.text-gray-82 {
+  color: #82888b;
+}
+.text-gray-aa {
+  color: $text-gray-aa;
+}
+.text-gray-e1 {
+  color: $text-gray-e1;
+}
+.text-gray-1a {
+  color: #1a1a1a;
+}
+.text-gray-b5 {
+  color: $text-gray-b5;
+}
+.text-gray-d5 {
+  color: #d5d5d5;
+}
+.text-gray-6f {
+  color: $text-gray-6f;
+}
+
 .text-cyan-0a {
   color: $text-cyan-0a;
 }
@@ -396,6 +403,16 @@ img {
 .font-opensan {
   font-family: 'Open Sans', sans-serif;
 }
-.gont-lato {
+.font-lato {
   font-family: 'Lato', sans-serif;
+}
+/*=================================================================*/
+.hover-color-02:hover {
+  color: #0288d1;
+}
+.text-decoration {
+  text-decoration: underline;
+}
+.text-decoration:hover{
+  text-decoration: underline;
 }
